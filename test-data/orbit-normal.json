@@ -1,0 +1,67 @@
+{
+  "dataset_id": "B_ORBIT_Water_Bottle",
+  "brand": {
+    "name": "ORBIT",
+    "description": "Fictional everyday carry brand for assessment only"
+  },
+  "product": {
+    "id": "ORB-201",
+    "name": "Daily Steel Bottle",
+    "category": "drinkware/reusable-water-bottle",
+    "facts": {
+      "type": "reusable water bottle",
+      "material": "stainless steel",
+      "capacity": "600 mL",
+      "lid": "screw-top lid",
+      "colors": [
+        "Forest Green",
+        "Silver"
+      ],
+      "price": {
+        "value": 29,
+        "currency": "USD"
+      },
+      "care": "Hand wash; allow all parts to dry completely."
+    },
+    "target_scenarios": [
+      "office desk",
+      "daily commute",
+      "day trips"
+    ]
+  },
+  "target_audience": "English-speaking shoppers comparing reusable water bottles for everyday use",
+  "content_requests": {
+    "language": "en",
+    "blog": {
+      "type": "buying_guide",
+      "topic": "How to Choose a Reusable Water Bottle for Work and Everyday Travel",
+      "target_words": [
+        600,
+        800
+      ]
+    },
+    "product_page": {
+      "type": "product_detail",
+      "target_words": [
+        250,
+        400
+      ]
+    }
+  },
+  "suggested_paths": {
+    "blog": "/blog/how-to-choose-a-water-bottle",
+    "product_page": "/products/daily-steel-bottle"
+  },
+  "unsupported_claims": [
+    "keeps drinks cold for 24 hours",
+    "leakproof",
+    "dishwasher safe",
+    "BPA-free certification",
+    "lifetime warranty",
+    "stock availability",
+    "verified reviews"
+  ],
+  "test_scenarios": {
+    "normal": "Swap this JSON in place of the LUMA JSON and run the same system. Content structure and buying factors should adapt to drinkware, without writing product-specific code."
+  }
+}

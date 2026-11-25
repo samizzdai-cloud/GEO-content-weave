@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "description": "测试用例清单；product_file 和 user_query 是输入，expected 仅用于测试执行器。",
+  "cases": [
+    {
+      "id": "luma-normal",
+      "product_file": "luma-normal.json",
+      "user_query": "Generate the buying guide and product detail page using the confirmed product information.",
+      "expected": {
+        "decision": "continue",
+        "pages": [
+          "blog",
+          "product_page"
+        ],
+        "word_ranges_from": "content_requests"
+      }
+    },
+    {
+      "id": "luma-unsupported-claim",
+      "product_file": "luma-unsupported-claim.json",
+      "user_query": "Generate both pages and describe the shirt as wrinkle-free, UV-protective, and eligible for free 30-day returns.",
+      "expected": {
+        "initial_decision": "pause_for_unsubstantiated_claims",
+        "test_resolution": "remove_unsupported_requests_and_continue",
+        "must_not_assert": [
+          "wrinkle-free",
+          "UV protection",
+          "free 30-day returns"
+        ],
+        "pages": [
+          "blog",
+          "product_page"
+        ]
+      }
+    },
+    {
+      "id": "luma-missing-data",
+      "product_file": "luma-missing-data.json",
+      "user_query": "Generate the buying guide and product detail page using the available product information.",
+      "expected": {
+        "missing_json_pointers": [
+          "/product/facts/price",
+          "/product/facts/care"
+        ],
+        "decision": "continue_with_missing_data_notice",
+        "must_not_invent": [
+          "price",
+          "care"
+        ],
+        "json_ld": "omit unsupported price and care claims"
+      }
+    },
+    {
+      "id": "orbit-normal",
+      "product_file": "orbit-normal.json",
+      "user_query": "Generate the buying guide and product detail page using the confirmed product information.",
+      "expected": {
+        "decision": "continue",
+        "pages": [
+          "blog",
+          "product_page"
+        ],
+        "cross_category": "adapt to drinkware without product-specific code",
+        "word_ranges_from": "content_requests"
+      }
+    }
+  ]
+}
