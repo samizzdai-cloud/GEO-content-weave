@@ -74,7 +74,7 @@ open -e .env
 
 ![Agent 目的、链路与循环](docs/agent-workflow.svg)
 
-图中的蓝色是模型角色、灰色是程序／外部工具、黄色是用户操作。可独立打开 [SVG 图](docs/agent-workflow.svg)，在支持 SVG 的画板编辑；布局与文字源在 [绘图脚本](scripts/render_agent_map.py)。下方 Mermaid 是可直接修改文本、由 GitHub 渲染的流程版本。
+
 
 ```mermaid
 flowchart TD
